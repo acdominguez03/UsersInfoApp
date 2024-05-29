@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUserViewController" customModule="UsersInfoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="etFavoriteCity" destination="3T8-lf-Yg0" id="Ix0-Wr-RJb"/>
+                <outlet property="etFavoriteNumber" destination="Lkf-HB-84v" id="5KG-43-Qcp"/>
+                <outlet property="etName" destination="zXJ-he-aYd" id="lxT-m7-pg3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXJ-he-aYd">
+                    <rect key="frame" x="20" y="79" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Favorite City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3T8-lf-Yg0">
+                    <rect key="frame" x="20" y="133" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Favorite Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lkf-HB-84v">
+                    <rect key="frame" x="20" y="187" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-a4-Opm">
+                    <rect key="frame" x="20" y="241" width="353" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Select favorite color"/>
+                    <connections>
+                        <action selector="favoriteColorTap:" destination="-1" eventType="touchUpInside" id="9e6-6e-Azn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3T8-lf-Yg0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DCI-pD-N5f"/>
+                <constraint firstItem="zXJ-he-aYd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LHq-yW-TUC"/>
+                <constraint firstItem="ah6-a4-Opm" firstAttribute="top" secondItem="Lkf-HB-84v" secondAttribute="bottom" constant="20" id="acU-pc-ACC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3T8-lf-Yg0" secondAttribute="trailing" constant="20" id="ask-gi-46k"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ah6-a4-Opm" secondAttribute="trailing" constant="20" id="bPh-vA-cdm"/>
+                <constraint firstItem="Lkf-HB-84v" firstAttribute="top" secondItem="3T8-lf-Yg0" secondAttribute="bottom" constant="20" id="eCy-5h-MPm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkf-HB-84v" secondAttribute="trailing" constant="20" id="f9x-u0-Q4O"/>
+                <constraint firstItem="zXJ-he-aYd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="h7Y-sP-Zdk"/>
+                <constraint firstItem="ah6-a4-Opm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kg8-I3-l7E"/>
+                <constraint firstItem="Lkf-HB-84v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sUE-RL-psB"/>
+                <constraint firstItem="3T8-lf-Yg0" firstAttribute="top" secondItem="zXJ-he-aYd" secondAttribute="bottom" constant="20" id="xOa-cs-XO1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zXJ-he-aYd" secondAttribute="trailing" constant="20" id="zpD-vV-zkp"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
