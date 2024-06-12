@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUserViewController" customModule="UsersInfoApp" customModuleProvider="target">
             <connections>
+                <outlet property="etBirthDate" destination="7Fu-mV-cNa" id="kS8-G9-gON"/>
                 <outlet property="etFavoriteCity" destination="3T8-lf-Yg0" id="Ix0-Wr-RJb"/>
                 <outlet property="etFavoriteNumber" destination="Lkf-HB-84v" id="5KG-43-Qcp"/>
                 <outlet property="etName" destination="zXJ-he-aYd" id="lxT-m7-pg3"/>
+                <outlet property="selectedColorView" destination="nUN-df-O3d" id="JQm-4d-Z1J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,33 +38,79 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Fu-mV-cNa">
+                    <rect key="frame" x="20" y="241" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-a4-Opm">
-                    <rect key="frame" x="20" y="241" width="353" height="35"/>
+                    <rect key="frame" x="20" y="365" width="353" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Select favorite color"/>
                     <connections>
                         <action selector="favoriteColorTap:" destination="-1" eventType="touchUpInside" id="9e6-6e-Azn"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUN-df-O3d">
+                    <rect key="frame" x="171.66666666666666" y="295" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="OJ9-Es-dgc"/>
+                        <constraint firstAttribute="width" constant="50" id="yQW-yl-YW5"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNp-Jn-hFv">
+                    <rect key="frame" x="40" y="763" width="313" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                    <connections>
+                        <action selector="tapSaveUser:" destination="-1" eventType="touchUpInside" id="tU8-BH-tel"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6o-pJ-mom">
+                    <rect key="frame" x="20" y="420" width="353" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Actual Location"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dNp-Jn-hFv" secondAttribute="trailing" constant="40" id="2pl-9e-rNj"/>
+                <constraint firstItem="ah6-a4-Opm" firstAttribute="top" secondItem="nUN-df-O3d" secondAttribute="bottom" constant="20" id="3De-V8-xyf"/>
+                <constraint firstItem="7Fu-mV-cNa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ah3-kh-XwV"/>
+                <constraint firstItem="nUN-df-O3d" firstAttribute="top" secondItem="7Fu-mV-cNa" secondAttribute="bottom" constant="20" id="B8U-BY-qQT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dNp-Jn-hFv" secondAttribute="bottom" constant="20" id="C6f-lS-tR6"/>
                 <constraint firstItem="3T8-lf-Yg0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DCI-pD-N5f"/>
                 <constraint firstItem="zXJ-he-aYd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LHq-yW-TUC"/>
-                <constraint firstItem="ah6-a4-Opm" firstAttribute="top" secondItem="Lkf-HB-84v" secondAttribute="bottom" constant="20" id="acU-pc-ACC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Fu-mV-cNa" secondAttribute="trailing" constant="20" id="V45-YI-Kd7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3T8-lf-Yg0" secondAttribute="trailing" constant="20" id="ask-gi-46k"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ah6-a4-Opm" secondAttribute="trailing" constant="20" id="bPh-vA-cdm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M6o-pJ-mom" secondAttribute="trailing" constant="20" id="d1k-pE-BD8"/>
+                <constraint firstItem="nUN-df-O3d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dOY-He-4d9"/>
                 <constraint firstItem="Lkf-HB-84v" firstAttribute="top" secondItem="3T8-lf-Yg0" secondAttribute="bottom" constant="20" id="eCy-5h-MPm"/>
+                <constraint firstItem="7Fu-mV-cNa" firstAttribute="top" secondItem="Lkf-HB-84v" secondAttribute="bottom" constant="20" id="eTA-oW-2MJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkf-HB-84v" secondAttribute="trailing" constant="20" id="f9x-u0-Q4O"/>
                 <constraint firstItem="zXJ-he-aYd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="h7Y-sP-Zdk"/>
+                <constraint firstItem="M6o-pJ-mom" firstAttribute="top" secondItem="ah6-a4-Opm" secondAttribute="bottom" constant="20" id="iOJ-UV-s9i"/>
+                <constraint firstItem="dNp-Jn-hFv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="kFZ-gd-ePf"/>
                 <constraint firstItem="ah6-a4-Opm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kg8-I3-l7E"/>
+                <constraint firstItem="M6o-pJ-mom" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rOU-dQ-EBu"/>
                 <constraint firstItem="Lkf-HB-84v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sUE-RL-psB"/>
                 <constraint firstItem="3T8-lf-Yg0" firstAttribute="top" secondItem="zXJ-he-aYd" secondAttribute="bottom" constant="20" id="xOa-cs-XO1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zXJ-he-aYd" secondAttribute="trailing" constant="20" id="zpD-vV-zkp"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="Vur-xe-GDY" appends="YES" id="QiF-Mp-3bv"/>
+            </connections>
             <point key="canvasLocation" x="138" y="20"/>
         </view>
+        <tapGestureRecognizer id="Vur-xe-GDY">
+            <connections>
+                <action selector="tapGestureRecognizer:" destination="-1" id="CXV-qe-TxJ"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

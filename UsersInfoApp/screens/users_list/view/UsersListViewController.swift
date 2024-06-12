@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import Combine
 
 class UsersListViewController: UIViewController {
+    
+    var viewModel: UsersListViewModel!
+    
+    private var cancellables: Set<AnyCancellable> = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var floatingActionButton: UIButton!
     
-    let users = [
-        UserEntity(name: "Andres", userBirthday: "10/08/2003", favoriteColor: UIColor.red, favoriteCity: "Sidney", favoriteNumber: 7, actualLocation: ""),
-        UserEntity(name: "Ismael", userBirthday: "23/06/1998", favoriteColor: UIColor.blue, favoriteCity: "Rome", favoriteNumber: 7, actualLocation: "")
-    ]
+    @IBOutlet weak var lbMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,27 @@ class UsersListViewController: UIViewController {
         floatingActionButton.layer.cornerRadius = 30
 
         setUpCollectionView()
+        getUsersList()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUsersOfDefaults()
+    }
+    
+    func getUsersList() {
+        viewModel.$users.sink { list in
+            if(list.isEmpty) {
+                self.lbMessage.text = "No hay usuarios todavía"
+            } else {
+                self.lbMessage.isHidden = true
+                self.collectionView.reloadData()
+            }
+        }.store(in: &cancellables)
+    }
+    
+    func set(viewModel: UsersListViewModel) {
+        self.viewModel = viewModel
     }
     
     func setUpCollectionView() {
@@ -38,9 +61,8 @@ class UsersListViewController: UIViewController {
         collectionView.register(UINib(nibName: UserCell.nibName, bundle: nil), forCellWithReuseIdentifier: UserCell.identifier)
     }
     
-
     @IBAction func floatingActionButtonTap(_ sender: Any) {
-        navigationController?.pushViewController(AddUserViewController(nibName: nil, bundle: nil), animated: true)
+        navigationController?.pushViewController(AddUserWireframe().getViewController(), animated: true)
     }
 }
 
@@ -50,23 +72,28 @@ extension UsersListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return users.count
+        return viewModel.users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let element = users[indexPath.row]
+        let element = viewModel.users[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as! UserCell
 
         cell.layer.borderWidth = 3
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.cornerRadius = 25
-        cell.ivFavoriteColor.tintColor = element.favoriteColor
+        cell.ivFavoriteColor.tintColor = loadColor(colorComponents: element.favoriteColor)
         cell.lbName.text = element.name
-        cell.lbBirthdate.text = element.userBirthday
+        cell.lbBirthdate.text = element.birthdate
         cell.lbFavoriteCity.text = "Favorite city: " + element.favoriteCity
         cell.lbFavoriteNumber.text = "Favorite number: " + String(element.favoriteNumber)
         
         return cell
+    }
+    
+    func loadColor(colorComponents: [CGFloat]) -> UIColor {
+        let color = UIColor(red: colorComponents[0], green: colorComponents[1], blue: colorComponents[2], alpha: colorComponents[3])
+        return color
     }
     
 }
