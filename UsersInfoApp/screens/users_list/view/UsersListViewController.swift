@@ -69,7 +69,8 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let elementId = users[indexPath.row]
+        let userId = viewModel.users[indexPath.row].id
+        UserDetailWireframe(userId: userId).push(navigation: navigationController)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,7 +84,7 @@ extension UsersListViewController: UICollectionViewDataSource {
         cell.layer.borderWidth = 3
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.cornerRadius = 25
-        cell.ivFavoriteColor.tintColor = loadColor(colorComponents: element.favoriteColor)
+        cell.ivFavoriteColor.tintColor = Extensions().loadColor(colorComponents: element.favoriteColor)
         cell.lbName.text = element.name
         cell.lbBirthdate.text = element.birthdate
         cell.lbFavoriteCity.text = "Favorite city: " + element.favoriteCity
@@ -92,10 +93,7 @@ extension UsersListViewController: UICollectionViewDataSource {
         return cell
     }
     
-    func loadColor(colorComponents: [CGFloat]) -> UIColor {
-        let color = UIColor(cgColor: .init(srgbRed: colorComponents[0], green: colorComponents[1], blue: colorComponents[2], alpha: colorComponents[03]))
-        return color
-    }
+    
     
 }
 

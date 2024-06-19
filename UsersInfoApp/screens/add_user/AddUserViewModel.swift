@@ -23,4 +23,8 @@ class AddUserViewModel: ObservableObject {
         completion()
     }
     
+    func getActualId() -> Int {
+        return UserDefaultsManager.shared.userId
+    }
+    
 }

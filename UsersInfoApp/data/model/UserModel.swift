@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct UserModel: Codable {
+    let id: Int
     let name: String
     let favoriteColor: [CGFloat]
     let favoriteCity: String

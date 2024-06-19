@@ -12,6 +12,7 @@ class UserDefaultsManager {
     static let shared = UserDefaultsManager()
     
     private let USERSKEY = "UsersArray"
+    private let ACTUALIDKEY = "ActualIdKey"
     
     private let userDefaults: UserDefaults
     
@@ -32,6 +33,15 @@ class UserDefaultsManager {
             if let data = try? PropertyListEncoder().encode(newValue) {
                 userDefaults.set(data, forKey: USERSKEY)
             }
+        }
+    }
+    
+    var userId: Int {
+        get {
+            return users.count
+        }
+        set {
+            userDefaults.setValue(users.count + 1, forKey: ACTUALIDKEY)
         }
     }
     

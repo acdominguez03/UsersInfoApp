@@ -91,6 +91,7 @@ class AddUserViewController: UIViewController {
         
     
         let newUser = UserModel(
+            id: viewModel.getActualId(),
             name: name,
             favoriteColor: colorComponents,
             favoriteCity: city,

@@ -17,6 +17,11 @@
 		7E956CC92C0644F1000B150E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E956CC82C0644F1000B150E /* Base */; };
 		7E956CCE2C0644F2000B150E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E956CCD2C0644F2000B150E /* Assets.xcassets */; };
 		7E956CD12C0644F2000B150E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E956CD02C0644F2000B150E /* Base */; };
+		7E9E2EAD2C232905004E1361 /* UserDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EAC2C232905004E1361 /* UserDetailWireframe.swift */; };
+		7E9E2EB02C232918004E1361 /* UserDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9E2EAF2C232918004E1361 /* UserDetailView.xib */; };
+		7E9E2EB12C232918004E1361 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EAE2C232918004E1361 /* UserDetailViewController.swift */; };
+		7E9E2EB42C23293B004E1361 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EB32C23293B004E1361 /* UserDetailViewModel.swift */; };
+		7E9E2EB72C233C39004E1361 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EB62C233C39004E1361 /* Extensions.swift */; };
 		7EB808262C08C4A2004630C7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB808252C08C4A2004630C7 /* LocationManager.swift */; };
 		7EBA77C92C0730B40035297D /* UsersListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBA77C82C0730B40035297D /* UsersListView.xib */; };
 		7EBA77CA2C0730B40035297D /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA77C72C0730B40035297D /* UsersListViewController.swift */; };
@@ -40,6 +45,11 @@
 		7E956CCD2C0644F2000B150E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E956CD02C0644F2000B150E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E956CD22C0644F2000B150E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9E2EAC2C232905004E1361 /* UserDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWireframe.swift; sourceTree = "<group>"; };
+		7E9E2EAE2C232918004E1361 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		7E9E2EAF2C232918004E1361 /* UserDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailView.xib; sourceTree = "<group>"; };
+		7E9E2EB32C23293B004E1361 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		7E9E2EB62C233C39004E1361 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7EB808252C08C4A2004630C7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7EBA77C72C0730B40035297D /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		7EBA77C82C0730B40035297D /* UsersListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListView.xib; sourceTree = "<group>"; };
@@ -88,6 +98,7 @@
 		7E956CC02C0644F1000B150E /* UsersInfoApp */ = {
 			isa = PBXGroup;
 			children = (
+				7E9E2EB52C233AE2004E1361 /* common */,
 				7EBA77D12C07371E0035297D /* data */,
 				7EBA77C52C072F5E0035297D /* screens */,
 				7E956CC12C0644F1000B150E /* AppDelegate.swift */,
@@ -100,9 +111,37 @@
 			path = UsersInfoApp;
 			sourceTree = "<group>";
 		};
+		7E9E2EAB2C2328F4004E1361 /* user_detail */ = {
+			isa = PBXGroup;
+			children = (
+				7E9E2EB22C232928004E1361 /* view */,
+				7E9E2EAC2C232905004E1361 /* UserDetailWireframe.swift */,
+				7E9E2EB32C23293B004E1361 /* UserDetailViewModel.swift */,
+			);
+			path = user_detail;
+			sourceTree = "<group>";
+		};
+		7E9E2EB22C232928004E1361 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7E9E2EAE2C232918004E1361 /* UserDetailViewController.swift */,
+				7E9E2EAF2C232918004E1361 /* UserDetailView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7E9E2EB52C233AE2004E1361 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				7E9E2EB62C233C39004E1361 /* Extensions.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		7EBA77C52C072F5E0035297D /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				7E9E2EAB2C2328F4004E1361 /* user_detail */,
 				7EBA77D42C0746AD0035297D /* add_user */,
 				7EBA77C62C0730930035297D /* users_list */,
 			);
@@ -230,6 +269,7 @@
 				7E956CD12C0644F2000B150E /* Base in Resources */,
 				7E956CC92C0644F1000B150E /* Base in Resources */,
 				7EBA77CF2C07369F0035297D /* UserCell.xib in Resources */,
+				7E9E2EB02C232918004E1361 /* UserDetailView.xib in Resources */,
 				7EBA77D72C0746C80035297D /* AddUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9E2EB12C232918004E1361 /* UserDetailViewController.swift in Sources */,
 				7E035B572C18ABCC0009E848 /* UserListWireframe.swift in Sources */,
 				7EBA77CA2C0730B40035297D /* UsersListViewController.swift in Sources */,
 				7E956CC22C0644F1000B150E /* AppDelegate.swift in Sources */,
@@ -251,8 +292,11 @@
 				7EBA77D82C0746C80035297D /* AddUserViewController.swift in Sources */,
 				7E2864782C10DBA8005F8C7F /* UserModel.swift in Sources */,
 				7E035B512C18A9630009E848 /* UserDefaultsManager.swift in Sources */,
+				7E9E2EB72C233C39004E1361 /* Extensions.swift in Sources */,
 				7E956CC42C0644F1000B150E /* SceneDelegate.swift in Sources */,
+				7E9E2EB42C23293B004E1361 /* UserDetailViewModel.swift in Sources */,
 				7ED68F4D2C19B67600DB5819 /* AddUserWireframe.swift in Sources */,
+				7E9E2EAD2C232905004E1361 /* UserDetailWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
