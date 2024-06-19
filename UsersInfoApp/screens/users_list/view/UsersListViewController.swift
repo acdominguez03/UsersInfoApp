@@ -20,6 +20,7 @@ class UsersListViewController: UIViewController {
     
     @IBOutlet weak var lbMessage: UILabel!
 
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class UsersListViewController: UIViewController {
     }
     
     func getUsersList() {
-        viewModel.$users.sink { list in
+        viewModel.$usersFiltered.sink { list in
             if(list.isEmpty) {
                 self.lbMessage.text = "No hay usuarios todavía"
             } else {
@@ -69,16 +70,16 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let userId = viewModel.users[indexPath.row].id
+        let userId = viewModel.usersFiltered[indexPath.row].id
         UserDetailWireframe(userId: userId).push(navigation: navigationController)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.users.count
+        return viewModel.usersFiltered.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let element = viewModel.users[indexPath.row]
+        let element = viewModel.usersFiltered[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as! UserCell
 
         cell.layer.borderWidth = 3
@@ -106,5 +107,13 @@ extension UsersListViewController: UICollectionViewDelegateFlowLayout {
          
         let size = (collectionView.frame.width - 30)
         return CGSize(width: size, height: 100)
+    }
+}
+
+extension UsersListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterList(searchText: searchText) {
+            self.collectionView.reloadData()
+        }
     }
 }

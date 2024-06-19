@@ -13,6 +13,7 @@
                 <outlet property="collectionView" destination="hza-zi-g9A" id="Za8-A0-p5x"/>
                 <outlet property="floatingActionButton" destination="70L-16-lDN" id="oYt-BA-RvY"/>
                 <outlet property="lbMessage" destination="Dgw-cf-lnc" id="pkq-xj-qfQ"/>
+                <outlet property="searchBar" destination="ZRm-Tb-09x" id="Sg0-Xq-INa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hza-zi-g9A">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="135" width="393" height="683"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sv3-P1-6AL">
                         <size key="itemSize" width="128" height="128"/>
@@ -49,17 +50,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-Tb-09x">
+                    <rect key="frame" x="0.0" y="69" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5o3-aB-Jur"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hza-zi-g9A" secondAttribute="bottom" id="4mr-KO-1zc"/>
-                <constraint firstItem="hza-zi-g9A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8Ma-pt-Saj"/>
+                <constraint firstItem="ZRm-Tb-09x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Grp-Ee-FCt"/>
                 <constraint firstItem="Dgw-cf-lnc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KxY-RS-TtR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hza-zi-g9A" secondAttribute="trailing" id="ao8-ok-bSD"/>
+                <constraint firstItem="ZRm-Tb-09x" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="b3N-uB-BvL"/>
+                <constraint firstItem="hza-zi-g9A" firstAttribute="top" secondItem="ZRm-Tb-09x" secondAttribute="bottom" constant="10" id="cSI-kq-HD8"/>
                 <constraint firstItem="hza-zi-g9A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hnt-C6-2XF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="70L-16-lDN" secondAttribute="bottom" constant="30" id="kfL-Ul-YkQ"/>
                 <constraint firstItem="Dgw-cf-lnc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="so5-Bg-rTU"/>
+                <constraint firstItem="ZRm-Tb-09x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="xBR-YK-6eU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="70L-16-lDN" secondAttribute="trailing" constant="30" id="yz0-hX-hdh"/>
             </constraints>
             <point key="canvasLocation" x="138" y="20"/>
