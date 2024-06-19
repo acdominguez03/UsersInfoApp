@@ -13,12 +13,12 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var etName: UITextField!
     @IBOutlet weak var etFavoriteCity: UITextField!
     @IBOutlet weak var etFavoriteNumber: UITextField!
+    @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var etBirthDate: UITextField!
     
     var favoriteColor: UIColor = UIColor.black
-    var birthdate: Date = Date()
-    var locationLatitude: Double = 0.0
-    var locationLongitude: Double = 0.0
+    var locationLatitude: Double? = nil
+    var locationLongitude: Double? = nil
     
     private var viewModel: AddUserViewModel!
     
@@ -33,14 +33,6 @@ class AddUserViewController: UIViewController {
         setUpDatePicker()
         
         setUpColorView()
-        
-        LocationManager.shared.getUserLocation { [weak self] location in
-            guard let strongSelf = self else {
-                return
-            }
-            strongSelf.locationLatitude = location.coordinate.latitude.magnitude
-            strongSelf.locationLongitude = location.coordinate.longitude.magnitude
-        }
     }
     
     func set(viewModel: AddUserViewModel) {
@@ -68,12 +60,42 @@ class AddUserViewController: UIViewController {
             return
         }
         
+        guard let name = etName.text, !name.isEmpty else {
+            lbError.text = "Introduce un nombre por favor"
+            return
+        }
+        
+        guard let city = etFavoriteCity.text, !city.isEmpty else {
+            lbError.text = "Introduce una ciudad por favor"
+            return
+        }
+        
+        guard let number = etFavoriteNumber.text, !number.isEmpty else {
+            lbError.text = "Introduce un número por favor"
+            return
+        }
+        
+        guard let birthdate = etBirthDate.text, !birthdate.isEmpty else {
+            lbError.text = "Introduce tu fecha de nacimiento por favor"
+            return
+        }
+        
+        guard let locationLatitude else {
+            lbError.text = "Pulse el botón para obtener tu ubicación por favor"
+            return
+        }
+        
+        guard let locationLongitude else {
+            return
+        }
+        
+    
         let newUser = UserModel(
-            name: etName.text ?? "",
+            name: name,
             favoriteColor: colorComponents,
-            favoriteCity: etFavoriteCity.text ?? "",
-            favoriteNumber: Int(etFavoriteNumber.text ?? "") ?? 0,
-            birthdate: formatDate(date: birthdate),
+            favoriteCity: city,
+            favoriteNumber: Int(number) ?? 0,
+            birthdate: birthdate,
             locationLatitude: locationLatitude,
             locationLongitude: locationLongitude
         )
@@ -92,6 +114,16 @@ class AddUserViewController: UIViewController {
         selectedColorView.layer.masksToBounds = true
         selectedColorView.layer.cornerRadius = 25
         selectedColorView.backgroundColor = favoriteColor
+    }
+    
+    @IBAction func getActualLocation(_ sender: Any) {
+        LocationManager.shared.getUserLocation { [weak self] location in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.locationLatitude = location.coordinate.latitude.magnitude
+            strongSelf.locationLongitude = location.coordinate.longitude.magnitude
+        }
     }
     
     @IBAction func favoriteColorTap(_ sender: Any) {
@@ -117,7 +149,6 @@ class AddUserViewController: UIViewController {
     }
     
     @objc func dateChange(datePicker: UIDatePicker) {
-        birthdate = datePicker.date
         etBirthDate.text = formatDate(date: datePicker.date)
     }
     

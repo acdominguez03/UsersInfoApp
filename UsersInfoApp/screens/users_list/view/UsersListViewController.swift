@@ -19,6 +19,7 @@ class UsersListViewController: UIViewController {
     @IBOutlet weak var floatingActionButton: UIButton!
     
     @IBOutlet weak var lbMessage: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +93,7 @@ extension UsersListViewController: UICollectionViewDataSource {
     }
     
     func loadColor(colorComponents: [CGFloat]) -> UIColor {
-        let color = UIColor(red: colorComponents[0], green: colorComponents[1], blue: colorComponents[2], alpha: colorComponents[3])
+        let color = UIColor(cgColor: .init(srgbRed: colorComponents[0], green: colorComponents[1], blue: colorComponents[2], alpha: colorComponents[03]))
         return color
     }
     
