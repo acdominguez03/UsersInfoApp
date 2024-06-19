@@ -16,7 +16,7 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var etBirthDate: UITextField!
     
-    var favoriteColor: UIColor = UIColor.black
+    var favoriteColor: UIColor? = nil
     var locationLatitude: Double? = nil
     var locationLongitude: Double? = nil
     
@@ -39,26 +39,11 @@ class AddUserViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-//    func addMapPin(with location: CLLocation) {
-//        let pin = MKPointAnnotation()
-//        pin.coordinate = location.coordinate
-//        maps.setRegion(
-//            MKCoordinateRegion(
-//                center: location.coordinate,
-//                span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
-//            ),
-//            animated: true
-//        )
-//        maps.addAnnotation(pin)
-//    }
     @IBAction func tapSaveUser(_ sender: Any) {
         saveUser()
     }
     
     func saveUser() {
-        guard let colorComponents = favoriteColor.cgColor.components else {
-            return
-        }
         
         guard let name = etName.text, !name.isEmpty else {
             lbError.text = "Introduce un nombre por favor"
@@ -86,6 +71,11 @@ class AddUserViewController: UIViewController {
         }
         
         guard let locationLongitude else {
+            return
+        }
+        
+        guard let colorComponents = favoriteColor?.cgColor.components else {
+            lbError.text = "Escoge un color por favor por favor"
             return
         }
         

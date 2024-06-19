@@ -24,6 +24,9 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Detail"
+        
         viewModel.getUser()
 
         setUpView()
