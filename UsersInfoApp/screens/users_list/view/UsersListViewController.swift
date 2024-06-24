@@ -93,9 +93,6 @@ extension UsersListViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
-    
 }
 
 extension UsersListViewController: UICollectionViewDelegate {
