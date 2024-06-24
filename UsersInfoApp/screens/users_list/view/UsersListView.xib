@@ -50,7 +50,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-Tb-09x">
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-Tb-09x">
                     <rect key="frame" x="0.0" y="69" width="393" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
