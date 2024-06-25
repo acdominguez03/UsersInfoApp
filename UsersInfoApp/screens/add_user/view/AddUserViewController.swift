@@ -16,7 +16,7 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var etBirthDate: UITextField!
     
-    var favoriteColor: UIColor = UIColor.black
+    var favoriteColor: UIColor? = nil
     var locationLatitude: Double? = nil
     var locationLongitude: Double? = nil
     
@@ -43,7 +43,7 @@ class AddUserViewController: UIViewController {
     }
     
     func saveUser() {
-        guard let colorComponents = favoriteColor.cgColor.components else {
+        guard let colorComponents = favoriteColor?.cgColor.components else {
             return
         }
         

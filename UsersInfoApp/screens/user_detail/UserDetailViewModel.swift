@@ -20,6 +20,8 @@ class UserDetailViewModel: ObservableObject {
     }
     
     func getUser() {
-        user = userDefaults.users[userId]
+        user = UserDefaultsManager.shared.users.first(where: { user in
+            user.id == userId
+        })
     }
 }
