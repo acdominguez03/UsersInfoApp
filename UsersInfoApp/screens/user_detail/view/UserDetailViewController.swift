@@ -49,6 +49,8 @@ class UserDetailViewController: UIViewController {
     
 
     @IBAction func showFavoriteCityInMap(_ sender: Any) {
+        guard let city = viewModel.user?.favoriteCity else { return }
+        MapWireframe(city: city).push(navigation: navigationController)
     }
     
 }

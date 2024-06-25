@@ -12,6 +12,8 @@
 		7E035B552C18AAD10009E848 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E035B542C18AAD10009E848 /* UsersListViewModel.swift */; };
 		7E035B572C18ABCC0009E848 /* UserListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E035B562C18ABCC0009E848 /* UserListWireframe.swift */; };
 		7E2864782C10DBA8005F8C7F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2864772C10DBA8005F8C7F /* UserModel.swift */; };
+		7E862CDE2C2B359200EC39F3 /* MapWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E862CDD2C2B359100EC39F3 /* MapWireframe.swift */; };
+		7E862CE02C2B369F00EC39F3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E862CDF2C2B369F00EC39F3 /* MapViewModel.swift */; };
 		7E956CC22C0644F1000B150E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E956CC12C0644F1000B150E /* AppDelegate.swift */; };
 		7E956CC42C0644F1000B150E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E956CC32C0644F1000B150E /* SceneDelegate.swift */; };
 		7E956CC92C0644F1000B150E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E956CC82C0644F1000B150E /* Base */; };
@@ -30,6 +32,8 @@
 		7EBA77D72C0746C80035297D /* AddUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBA77D62C0746C80035297D /* AddUserView.xib */; };
 		7EBA77D82C0746C80035297D /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA77D52C0746C80035297D /* AddUserViewController.swift */; };
 		7ED68F4D2C19B67600DB5819 /* AddUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED68F4C2C19B67600DB5819 /* AddUserWireframe.swift */; };
+		7EF877A62C29FF7C008C8581 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF877A52C29FF7C008C8581 /* MapView.xib */; };
+		7EF877A72C29FF7C008C8581 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF877A42C29FF7C008C8581 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,8 @@
 		7E035B542C18AAD10009E848 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 		7E035B562C18ABCC0009E848 /* UserListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListWireframe.swift; sourceTree = "<group>"; };
 		7E2864772C10DBA8005F8C7F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7E862CDD2C2B359100EC39F3 /* MapWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireframe.swift; sourceTree = "<group>"; };
+		7E862CDF2C2B369F00EC39F3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7E956CBE2C0644F1000B150E /* UsersInfoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersInfoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E956CC12C0644F1000B150E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E956CC32C0644F1000B150E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 		7EBA77D52C0746C80035297D /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		7EBA77D62C0746C80035297D /* AddUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserView.xib; sourceTree = "<group>"; };
 		7ED68F4C2C19B67600DB5819 /* AddUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserWireframe.swift; sourceTree = "<group>"; };
+		7EF877A42C29FF7C008C8581 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7EF877A52C29FF7C008C8581 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,7 @@
 		7EBA77C52C072F5E0035297D /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				7EF877A32C29FF58008C8581 /* map */,
 				7E9E2EAB2C2328F4004E1361 /* user_detail */,
 				7EBA77D42C0746AD0035297D /* add_user */,
 				7EBA77C62C0730930035297D /* users_list */,
@@ -206,6 +215,17 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		7EF877A32C29FF58008C8581 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				7EF877A42C29FF7C008C8581 /* MapViewController.swift */,
+				7EF877A52C29FF7C008C8581 /* MapView.xib */,
+				7E862CDD2C2B359100EC39F3 /* MapWireframe.swift */,
+				7E862CDF2C2B369F00EC39F3 /* MapViewModel.swift */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,6 +287,7 @@
 				7E956CCE2C0644F2000B150E /* Assets.xcassets in Resources */,
 				7EBA77C92C0730B40035297D /* UsersListView.xib in Resources */,
 				7E956CD12C0644F2000B150E /* Base in Resources */,
+				7EF877A62C29FF7C008C8581 /* MapView.xib in Resources */,
 				7E956CC92C0644F1000B150E /* Base in Resources */,
 				7EBA77CF2C07369F0035297D /* UserCell.xib in Resources */,
 				7E9E2EB02C232918004E1361 /* UserDetailView.xib in Resources */,
@@ -292,11 +313,14 @@
 				7EBA77D82C0746C80035297D /* AddUserViewController.swift in Sources */,
 				7E2864782C10DBA8005F8C7F /* UserModel.swift in Sources */,
 				7E035B512C18A9630009E848 /* UserDefaultsManager.swift in Sources */,
+				7E862CE02C2B369F00EC39F3 /* MapViewModel.swift in Sources */,
 				7E9E2EB72C233C39004E1361 /* Extensions.swift in Sources */,
 				7E956CC42C0644F1000B150E /* SceneDelegate.swift in Sources */,
+				7E862CDE2C2B359200EC39F3 /* MapWireframe.swift in Sources */,
 				7E9E2EB42C23293B004E1361 /* UserDetailViewModel.swift in Sources */,
 				7ED68F4D2C19B67600DB5819 /* AddUserWireframe.swift in Sources */,
 				7E9E2EAD2C232905004E1361 /* UserDetailWireframe.swift in Sources */,
+				7EF877A72C29FF7C008C8581 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
