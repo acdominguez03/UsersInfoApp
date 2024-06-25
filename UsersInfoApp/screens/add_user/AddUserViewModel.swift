@@ -19,7 +19,6 @@ class AddUserViewModel: ObservableObject {
         var users = UserDefaultsManager.shared.users
         users.append(user)
         UserDefaultsManager.shared.users = users
-        UserDefaultsManager.shared.sync()
         completion()
     }
     

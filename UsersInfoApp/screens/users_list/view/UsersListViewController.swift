@@ -14,7 +14,7 @@ class UsersListViewController: UIViewController {
     
     private var cancellables: Set<AnyCancellable> = []
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var floatingActionButton: UIButton!
     
@@ -25,19 +25,19 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Users"
         
         floatingActionButton.layer.masksToBounds = true
         floatingActionButton.layer.cornerRadius = 30
 
-        setUpCollectionView()
+        setUpTableView()
         getUsersList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getUsersOfDefaults()
+        tableView.reloadData()
     }
     
     func getUsersList() {
@@ -46,7 +46,7 @@ class UsersListViewController: UIViewController {
                 self.lbMessage.text = "No hay usuarios todavía"
             } else {
                 self.lbMessage.isHidden = true
-                self.collectionView.reloadData()
+                self.tableView.reloadData()
             }
         }.store(in: &cancellables)
     }
@@ -55,12 +55,10 @@ class UsersListViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-    func setUpCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        collectionView.register(UINib(nibName: UserCell.nibName, bundle: nil), forCellWithReuseIdentifier: UserCell.identifier)
+    func setUpTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: UserCell.nibName, bundle: nil), forCellReuseIdentifier: UserCell.identifier)
     }
     
     @IBAction func floatingActionButtonTap(_ sender: Any) {
@@ -68,49 +66,43 @@ class UsersListViewController: UIViewController {
     }
 }
 
-extension UsersListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let userId = viewModel.usersFiltered[indexPath.row].id
-        UserDetailWireframe(userId: userId).push(navigation: navigationController)
+extension UsersListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.usersFiltered.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            viewModel.removeUser(index: indexPath.row)
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.usersFiltered.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.usersFiltered.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let element = viewModel.usersFiltered[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as! UserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
 
-        cell.layer.borderWidth = 3
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.cornerRadius = 25
-        cell.ivFavoriteColor.tintColor = Extensions().loadColor(colorComponents: element.favoriteColor)
+        cell.ivFavoriteColor.layer.cornerRadius = 5
+        cell.ivFavoriteColor.backgroundColor = Extensions().loadColor(colorComponents: element.favoriteColor)
         cell.lbName.text = element.name
-        cell.lbBirthdate.text = element.birthdate
-        cell.lbFavoriteCity.text = "Favorite city: " + element.favoriteCity
-        cell.lbFavoriteNumber.text = "Favorite number: " + String(element.favoriteNumber)
-        
+
         return cell
     }
 }
 
-extension UsersListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) { }
-}
-
-extension UsersListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         
-        let size = (collectionView.frame.width - 30)
-        return CGSize(width: size, height: 100)
+extension UsersListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userId = viewModel.usersFiltered[indexPath.row].id
+        UserDetailWireframe(userId: userId).push(navigation: navigationController)
     }
 }
 
 extension UsersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterList(searchText: searchText) {
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
         }
     }
 }

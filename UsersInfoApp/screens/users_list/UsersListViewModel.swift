@@ -31,4 +31,9 @@ class UsersListViewModel: ObservableObject {
         
         success()
     }
+    
+    func removeUser(index: Int) {
+        UserDefaultsManager.shared.users.remove(at: index)
+        getUsersOfDefaults()
+    }
 }

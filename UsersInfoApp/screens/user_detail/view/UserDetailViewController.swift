@@ -24,6 +24,8 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Detail"
+        
         viewModel.getUser()
 
         setUpView()
@@ -37,10 +39,10 @@ class UserDetailViewController: UIViewController {
         viewModel.$user.sink { userModel in
             guard let user = userModel else { return }
             self.lbName.text = user.name
-            self.lbFavoriteNumber.text = String(user.favoriteNumber)
-            self.lbBirthdate.text = user.birthdate
+            self.lbFavoriteNumber.text = "Número favorito: " + String(user.favoriteNumber)
+            self.lbBirthdate.text = "Fecha de nacimiento: " + user.birthdate
             self.lbLocation.text = "Latitude: \(user.locationLatitude), longitude: \(user.locationLongitude)"
-            self.favoriteCityBtn.setTitle(user.favoriteCity, for: .normal)
+            self.favoriteCityBtn.setTitle("Ciudad favorita: " + user.favoriteCity, for: .normal)
             self.favoriteColorView.layer.masksToBounds = true
             self.favoriteColorView.layer.cornerRadius = 25
             self.favoriteColorView.backgroundColor = Extensions().loadColor(colorComponents: user.favoriteColor)

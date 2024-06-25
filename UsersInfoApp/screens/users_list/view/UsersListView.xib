@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsersListViewController" customModule="UsersInfoApp" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="hza-zi-g9A" id="Za8-A0-p5x"/>
                 <outlet property="floatingActionButton" destination="70L-16-lDN" id="oYt-BA-RvY"/>
                 <outlet property="lbMessage" destination="Dgw-cf-lnc" id="pkq-xj-qfQ"/>
                 <outlet property="searchBar" destination="ZRm-Tb-09x" id="Sg0-Xq-INa"/>
+                <outlet property="tableView" destination="F7F-4g-7F9" id="mVA-Wd-S7N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,16 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hza-zi-g9A">
-                    <rect key="frame" x="0.0" y="135" width="393" height="683"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sv3-P1-6AL">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="30" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F7F-4g-7F9">
+                    <rect key="frame" x="0.0" y="145" width="393" height="673"/>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70L-16-lDN">
                     <rect key="frame" x="303" y="728" width="60" height="60"/>
                     <constraints>
@@ -61,13 +54,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hza-zi-g9A" secondAttribute="bottom" id="4mr-KO-1zc"/>
+                <constraint firstItem="F7F-4g-7F9" firstAttribute="top" secondItem="ZRm-Tb-09x" secondAttribute="bottom" constant="20" id="0l1-iJ-Ktm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F7F-4g-7F9" secondAttribute="trailing" id="35H-e5-j1J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="F7F-4g-7F9" secondAttribute="bottom" id="3Rl-B9-oMg"/>
                 <constraint firstItem="ZRm-Tb-09x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Grp-Ee-FCt"/>
                 <constraint firstItem="Dgw-cf-lnc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KxY-RS-TtR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hza-zi-g9A" secondAttribute="trailing" id="ao8-ok-bSD"/>
+                <constraint firstItem="F7F-4g-7F9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZSf-h1-dCc"/>
                 <constraint firstItem="ZRm-Tb-09x" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="b3N-uB-BvL"/>
-                <constraint firstItem="hza-zi-g9A" firstAttribute="top" secondItem="ZRm-Tb-09x" secondAttribute="bottom" constant="10" id="cSI-kq-HD8"/>
-                <constraint firstItem="hza-zi-g9A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hnt-C6-2XF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="70L-16-lDN" secondAttribute="bottom" constant="30" id="kfL-Ul-YkQ"/>
                 <constraint firstItem="Dgw-cf-lnc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="so5-Bg-rTU"/>
                 <constraint firstItem="ZRm-Tb-09x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="xBR-YK-6eU"/>

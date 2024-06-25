@@ -7,17 +7,13 @@
 
 import UIKit
 
-class UserCell: UICollectionViewCell {
+class UserCell: UITableViewCell {
     
     static let identifier = "UserCellIdentifier"
     static let nibName = "UserCell"
 
-    
-    @IBOutlet weak var ivFavoriteColor: UIImageView!
+    @IBOutlet weak var ivFavoriteColor: UIView!
     @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var lbFavoriteCity: UILabel!
-    @IBOutlet weak var lbFavoriteNumber: UILabel!
-    @IBOutlet weak var lbBirthdate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
