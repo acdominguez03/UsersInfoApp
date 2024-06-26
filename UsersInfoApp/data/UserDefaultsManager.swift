@@ -45,7 +45,19 @@ class UserDefaultsManager {
         }
     }
     
-    func sync() {
-        userDefaults.synchronize()
+    func addUser(user: UserModel) {
+        users.append(user)
+    }
+    
+    func removeUser(index: Int) {
+        users.remove(at: index)
+    }
+    
+    func updateUser(userToUpdate: UserModel) {
+        if let index = users.firstIndex(where: { user in
+            user.id == userToUpdate.id
+        }) {
+            users[index] = userToUpdate
+        }
     }
 }

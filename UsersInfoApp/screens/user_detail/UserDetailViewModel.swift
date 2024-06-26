@@ -11,11 +11,9 @@ class UserDetailViewModel: ObservableObject {
     
     @Published var user: UserModel?
      
-    let userDefaults: UserDefaultsManager
     let userId: Int
     
-    init(userDefaults: UserDefaultsManager, userId: Int) {
-        self.userDefaults = userDefaults
+    init(userId: Int) {
         self.userId = userId
     }
     

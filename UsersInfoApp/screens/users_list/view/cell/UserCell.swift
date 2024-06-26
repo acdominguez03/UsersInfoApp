@@ -14,6 +14,7 @@ class UserCell: UITableViewCell {
 
     @IBOutlet weak var ivFavoriteColor: UIView!
     @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbCity: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

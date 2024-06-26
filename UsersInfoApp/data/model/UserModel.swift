@@ -8,13 +8,24 @@
 import Foundation
 import UIKit
 
-struct UserModel: Codable {
+class UserModel: Codable {
     let id: Int
-    let name: String
-    let favoriteColor: [CGFloat]
-    let favoriteCity: String
-    let favoriteNumber: Int
-    let birthdate: String
-    let locationLatitude: Double
-    let locationLongitude: Double
+    var name: String
+    var favoriteColor: [CGFloat]
+    var favoriteCity: String
+    var favoriteNumber: Int
+    var birthdate: String
+    var locationLatitude: Double
+    var locationLongitude: Double
+    
+    init(id: Int, name: String, favoriteColor: [CGFloat], favoriteCity: String, favoriteNumber: Int, birthdate: String, locationLatitude: Double, locationLongitude: Double) {
+        self.id = id
+        self.name = name
+        self.favoriteColor = favoriteColor
+        self.favoriteCity = favoriteCity
+        self.favoriteNumber = favoriteNumber
+        self.birthdate = birthdate
+        self.locationLatitude = locationLatitude
+        self.locationLongitude = locationLongitude
+    }
 }

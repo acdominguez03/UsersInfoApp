@@ -12,14 +12,13 @@ struct AddUserWireframe {
     
     private var viewController: AddUserViewController {
         let viewController: AddUserViewController = AddUserViewController(nibName: "AddUserView", bundle: nil)
-        let usersDefaultManager: UserDefaultsManager = UserDefaultsManager()
-        let viewModel: AddUserViewModel = createViewModel(with: usersDefaultManager)
+        let viewModel: AddUserViewModel = createViewModel()
         viewController.set(viewModel: viewModel)
         return viewController
     }
     
-    private func createViewModel(with userDefaultsManager: UserDefaultsManager) -> AddUserViewModel {
-        return AddUserViewModel(userDefaults: userDefaultsManager)
+    private func createViewModel() -> AddUserViewModel {
+        return AddUserViewModel()
     }
     
     func getViewController() -> AddUserViewController {

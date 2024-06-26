@@ -39,13 +39,13 @@ class UserDetailViewController: UIViewController {
         viewModel.$user.sink { userModel in
             guard let user = userModel else { return }
             self.lbName.text = user.name
-            self.lbFavoriteNumber.text = "Número favorito: " + String(user.favoriteNumber)
-            self.lbBirthdate.text = "Fecha de nacimiento: " + user.birthdate
+            self.lbFavoriteNumber.text = "Favorite number: " + String(user.favoriteNumber)
+            self.lbBirthdate.text = "Birthdate: " + user.birthdate
             self.lbLocation.text = "Latitude: \(user.locationLatitude), longitude: \(user.locationLongitude)"
-            self.favoriteCityBtn.setTitle("Ciudad favorita: " + user.favoriteCity, for: .normal)
+            self.favoriteCityBtn.setTitle("Favorite city: " + user.favoriteCity, for: .normal)
             self.favoriteColorView.layer.masksToBounds = true
             self.favoriteColorView.layer.cornerRadius = 25
-            self.favoriteColorView.backgroundColor = Extensions().loadColor(colorComponents: user.favoriteColor)
+            self.favoriteColorView.backgroundColor = Utils.shared.loadColor(colorComponents: user.favoriteColor)
         }.store(in: &cancellables)
     }
     

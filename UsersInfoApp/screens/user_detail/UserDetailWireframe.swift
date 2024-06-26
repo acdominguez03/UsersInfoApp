@@ -18,14 +18,13 @@ struct UserDetailWireframe {
     
     private var viewController: UserDetailViewController {
         let viewController: UserDetailViewController = UserDetailViewController(nibName: "UserDetailView", bundle: nil)
-        let usersDefaultManager: UserDefaultsManager = UserDefaultsManager()
-        let viewModel: UserDetailViewModel = createViewModel(with: usersDefaultManager)
+        let viewModel: UserDetailViewModel = createViewModel()
         viewController.set(viewModel: viewModel)
         return viewController
     }
     
-    private func createViewModel(with userDefaultsManager: UserDefaultsManager) -> UserDetailViewModel {
-        return UserDetailViewModel(userDefaults: userDefaultsManager, userId: userId)
+    private func createViewModel() -> UserDetailViewModel {
+        return UserDetailViewModel(userId: userId)
     }
     
     func getViewController() -> UserDetailViewController {

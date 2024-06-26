@@ -115,36 +115,26 @@ class AddUserViewController: UIViewController {
     }
     
     @IBAction func favoriteColorTap(_ sender: Any) {
-        let colorPicker = UIColorPickerViewController()
-        colorPicker.title = "Favorite Color"
-        colorPicker.supportsAlpha = false
+        let colorPicker = Utils.shared.colorPicker()
         colorPicker.delegate = self
-        colorPicker.modalPresentationStyle = .popover
         colorPicker.popoverPresentationController?.sourceItem = navigationItem.rightBarButtonItem
         present(colorPicker, animated: true)
     }
     
     //datePicker
     func setUpDatePicker() {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
+        
+        let datePicker = Utils.shared.datePicker()
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 300)
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.maximumDate = .now
         
         etBirthDate.inputView = datePicker
     }
     
     @objc func dateChange(datePicker: UIDatePicker) {
-        etBirthDate.text = formatDate(date: datePicker.date)
+        etBirthDate.text = Utils.shared.formatDate(date: datePicker.date)
     }
     
-    func formatDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy"
-        return formatter.string(from: date)
-    }
+    
 }
 
 extension AddUserViewController: UIColorPickerViewControllerDelegate {

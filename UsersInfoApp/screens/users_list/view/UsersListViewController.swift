@@ -68,12 +68,26 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            viewModel.usersFiltered.remove(at: indexPath.row)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
+            self.viewModel.usersFiltered.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            viewModel.removeUser(index: indexPath.row)
+            self.viewModel.removeUser(index: indexPath.row)
+            completion(true)
         }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        
+        let updateAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
+            UpdateUserWireframe(userId: indexPath.row).push(navigation: self.navigationController)
+            completion(true)
+        }
+        updateAction.image = UIImage(systemName: "pencil")
+        updateAction.backgroundColor = .systemMint
+        
+        let config = UISwipeActionsConfiguration(actions: [deleteAction, updateAction])
+        return config
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,9 +98,10 @@ extension UsersListViewController: UITableViewDataSource {
         let element = viewModel.usersFiltered[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
 
-        cell.ivFavoriteColor.layer.cornerRadius = 5
-        cell.ivFavoriteColor.backgroundColor = Extensions().loadColor(colorComponents: element.favoriteColor)
+        cell.ivFavoriteColor.layer.cornerRadius = 25
+        cell.ivFavoriteColor.backgroundColor = Utils.shared.loadColor(colorComponents: element.favoriteColor)
         cell.lbName.text = element.name
+        cell.lbCity.text = "Favorite city: " + element.favoriteCity
 
         return cell
     }
@@ -96,6 +111,10 @@ extension UsersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let userId = viewModel.usersFiltered[indexPath.row].id
         UserDetailWireframe(userId: userId).push(navigation: navigationController)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 

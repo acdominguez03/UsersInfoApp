@@ -12,7 +12,6 @@ class UsersListViewModel: ObservableObject {
     @Published var usersFiltered: [UserModel] = []
     
     func getUsersOfDefaults() {
-        UserDefaultsManager.shared.sync()
         users = UserDefaultsManager.shared.users
         usersFiltered = UserDefaultsManager.shared.users
     }
@@ -33,7 +32,7 @@ class UsersListViewModel: ObservableObject {
     }
     
     func removeUser(index: Int) {
-        UserDefaultsManager.shared.users.remove(at: index)
+        UserDefaultsManager.shared.removeUser(index: index)
         getUsersOfDefaults()
     }
 }

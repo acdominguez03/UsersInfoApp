@@ -24,13 +24,17 @@
 		7E9E2EB02C232918004E1361 /* UserDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9E2EAF2C232918004E1361 /* UserDetailView.xib */; };
 		7E9E2EB12C232918004E1361 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EAE2C232918004E1361 /* UserDetailViewController.swift */; };
 		7E9E2EB42C23293B004E1361 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EB32C23293B004E1361 /* UserDetailViewModel.swift */; };
-		7E9E2EB72C233C39004E1361 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E2EB62C233C39004E1361 /* Extensions.swift */; };
 		7EB808262C08C4A2004630C7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB808252C08C4A2004630C7 /* LocationManager.swift */; };
 		7EBA77C92C0730B40035297D /* UsersListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBA77C82C0730B40035297D /* UsersListView.xib */; };
 		7EBA77CA2C0730B40035297D /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA77C72C0730B40035297D /* UsersListViewController.swift */; };
 		7EBA77D02C07369F0035297D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA77CD2C07369F0035297D /* UserCell.swift */; };
 		7EBA77D72C0746C80035297D /* AddUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBA77D62C0746C80035297D /* AddUserView.xib */; };
 		7EBA77D82C0746C80035297D /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA77D52C0746C80035297D /* AddUserViewController.swift */; };
+		7EC924472C2C42A900FAA16B /* UpdateUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC924462C2C42A900FAA16B /* UpdateUserView.xib */; };
+		7EC924482C2C42A900FAA16B /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC924452C2C42A900FAA16B /* UpdateUserViewController.swift */; };
+		7EC9244B2C2C610000FAA16B /* UpdateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9244A2C2C610000FAA16B /* UpdateUserViewModel.swift */; };
+		7EC9244D2C2C611000FAA16B /* UpdateUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9244C2C2C611000FAA16B /* UpdateUserWireframe.swift */; };
+		7EC924502C2C7CDF00FAA16B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9244F2C2C7CDF00FAA16B /* Utils.swift */; };
 		7ED68F4D2C19B67600DB5819 /* AddUserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED68F4C2C19B67600DB5819 /* AddUserWireframe.swift */; };
 		7EF877A62C29FF7C008C8581 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF877A52C29FF7C008C8581 /* MapView.xib */; };
 		7EF877A72C29FF7C008C8581 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF877A42C29FF7C008C8581 /* MapViewController.swift */; };
@@ -56,13 +60,17 @@
 		7E9E2EAE2C232918004E1361 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		7E9E2EAF2C232918004E1361 /* UserDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailView.xib; sourceTree = "<group>"; };
 		7E9E2EB32C23293B004E1361 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
-		7E9E2EB62C233C39004E1361 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7EB808252C08C4A2004630C7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7EBA77C72C0730B40035297D /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		7EBA77C82C0730B40035297D /* UsersListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListView.xib; sourceTree = "<group>"; };
 		7EBA77CD2C07369F0035297D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7EBA77D52C0746C80035297D /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		7EBA77D62C0746C80035297D /* AddUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserView.xib; sourceTree = "<group>"; };
+		7EC924452C2C42A900FAA16B /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
+		7EC924462C2C42A900FAA16B /* UpdateUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateUserView.xib; sourceTree = "<group>"; };
+		7EC9244A2C2C610000FAA16B /* UpdateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewModel.swift; sourceTree = "<group>"; };
+		7EC9244C2C2C611000FAA16B /* UpdateUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserWireframe.swift; sourceTree = "<group>"; };
+		7EC9244F2C2C7CDF00FAA16B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7ED68F4C2C19B67600DB5819 /* AddUserWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserWireframe.swift; sourceTree = "<group>"; };
 		7EF877A42C29FF7C008C8581 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7EF877A52C29FF7C008C8581 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
@@ -141,7 +149,7 @@
 		7E9E2EB52C233AE2004E1361 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				7E9E2EB62C233C39004E1361 /* Extensions.swift */,
+				7EC9244F2C2C7CDF00FAA16B /* Utils.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 		7EBA77C52C072F5E0035297D /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				7EC924442C2C428C00FAA16B /* update_user */,
 				7EF877A32C29FF58008C8581 /* map */,
 				7E9E2EAB2C2328F4004E1361 /* user_detail */,
 				7EBA77D42C0746AD0035297D /* add_user */,
@@ -206,6 +215,34 @@
 			path = add_user;
 			sourceTree = "<group>";
 		};
+		7EC924442C2C428C00FAA16B /* update_user */ = {
+			isa = PBXGroup;
+			children = (
+				7EC924492C2C60EB00FAA16B /* view */,
+				7EC9244A2C2C610000FAA16B /* UpdateUserViewModel.swift */,
+				7EC9244C2C2C611000FAA16B /* UpdateUserWireframe.swift */,
+			);
+			path = update_user;
+			sourceTree = "<group>";
+		};
+		7EC924492C2C60EB00FAA16B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7EC924452C2C42A900FAA16B /* UpdateUserViewController.swift */,
+				7EC924462C2C42A900FAA16B /* UpdateUserView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7EC9244E2C2C7B2500FAA16B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7EF877A42C29FF7C008C8581 /* MapViewController.swift */,
+				7EF877A52C29FF7C008C8581 /* MapView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		7ED68F4B2C19B51400DB5819 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,8 +255,7 @@
 		7EF877A32C29FF58008C8581 /* map */ = {
 			isa = PBXGroup;
 			children = (
-				7EF877A42C29FF7C008C8581 /* MapViewController.swift */,
-				7EF877A52C29FF7C008C8581 /* MapView.xib */,
+				7EC9244E2C2C7B2500FAA16B /* view */,
 				7E862CDD2C2B359100EC39F3 /* MapWireframe.swift */,
 				7E862CDF2C2B369F00EC39F3 /* MapViewModel.swift */,
 			);
@@ -290,6 +326,7 @@
 				7EF877A62C29FF7C008C8581 /* MapView.xib in Resources */,
 				7E862CE22C2B472200EC39F3 /* UserCell.xib in Resources */,
 				7E956CC92C0644F1000B150E /* Base in Resources */,
+				7EC924472C2C42A900FAA16B /* UpdateUserView.xib in Resources */,
 				7E9E2EB02C232918004E1361 /* UserDetailView.xib in Resources */,
 				7EBA77D72C0746C80035297D /* AddUserView.xib in Resources */,
 			);
@@ -308,13 +345,16 @@
 				7E956CC22C0644F1000B150E /* AppDelegate.swift in Sources */,
 				7E035B532C18AA790009E848 /* AddUserViewModel.swift in Sources */,
 				7E035B552C18AAD10009E848 /* UsersListViewModel.swift in Sources */,
+				7EC924482C2C42A900FAA16B /* UpdateUserViewController.swift in Sources */,
 				7EBA77D02C07369F0035297D /* UserCell.swift in Sources */,
+				7EC9244D2C2C611000FAA16B /* UpdateUserWireframe.swift in Sources */,
 				7EB808262C08C4A2004630C7 /* LocationManager.swift in Sources */,
 				7EBA77D82C0746C80035297D /* AddUserViewController.swift in Sources */,
 				7E2864782C10DBA8005F8C7F /* UserModel.swift in Sources */,
 				7E035B512C18A9630009E848 /* UserDefaultsManager.swift in Sources */,
 				7E862CE02C2B369F00EC39F3 /* MapViewModel.swift in Sources */,
-				7E9E2EB72C233C39004E1361 /* Extensions.swift in Sources */,
+				7EC924502C2C7CDF00FAA16B /* Utils.swift in Sources */,
+				7EC9244B2C2C610000FAA16B /* UpdateUserViewModel.swift in Sources */,
 				7E956CC42C0644F1000B150E /* SceneDelegate.swift in Sources */,
 				7E862CDE2C2B359200EC39F3 /* MapWireframe.swift in Sources */,
 				7E9E2EB42C23293B004E1361 /* UserDetailViewModel.swift in Sources */,
