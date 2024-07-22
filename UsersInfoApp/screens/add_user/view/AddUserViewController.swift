@@ -43,6 +43,7 @@ class AddUserViewController: UIViewController {
     }
     
     func saveUser() {
+        
         guard let colorComponents = favoriteColor?.cgColor.components else {
             return
         }
@@ -75,7 +76,6 @@ class AddUserViewController: UIViewController {
         guard let locationLongitude else {
             return
         }
-        
     
         let newUser = UserModel(
             id: viewModel.getActualId(),

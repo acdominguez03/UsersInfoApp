@@ -62,6 +62,7 @@ class UsersListViewController: UIViewController {
     }
     
     @IBAction func floatingActionButtonTap(_ sender: Any) {
+        
         navigationController?.pushViewController(AddUserWireframe().getViewController(), animated: true)
     }
 }
